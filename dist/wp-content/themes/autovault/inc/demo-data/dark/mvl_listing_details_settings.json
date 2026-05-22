@@ -1,0 +1,127 @@
+{
+    "user_image_crop_optimized": "",
+    "user_image_crop_checkbox": "",
+    "user_image_crop_width": "800",
+    "user_image_crop_height": "600",
+    "user_image_size_limit": "4000",
+    "show_trade_in": false,
+    "show_compare": false,
+    "show_featured_btn": false,
+    "show_offer_price": false,
+    "show_share": false,
+    "show_notice_share": "",
+    "show_pdf": false,
+    "show_stock": false,
+    "show_test_drive": false,
+    "show_certified_logo_1": false,
+    "show_certified_logo_2": "",
+    "show_added_date": false,
+    "show_print_btn": "",
+    "show_vin": "",
+    "show_search_results": false,
+    "show_registered": "",
+    "stm_show_number": false,
+    "stm_show_seller_email": false,
+    "stm_similar_query": "",
+    "show_calculator": "",
+    "stm_show_seller_whatsapp": "",
+    "stm_whatsapp_massage": "Hi. I have visited your site. And I would like to rent {{listing_url}}. Is it available for rent?",
+    "enable_carguru": false,
+    "carguru_style": "STYLE1",
+    "carguru_min_rating": "GREAT_PRICE",
+    "carguru_default_height": "42",
+    "default_interest_rate": "",
+    "default_month_period": "",
+    "default_down_payment_type": "static",
+    "default_down_payment": "",
+    "default_down_payment_percent": "",
+    "fs_user_features": [
+        {
+            "tab_title_single": "Extra Features",
+            "tab_title_selected_labels": [
+                {
+                    "value": "abs",
+                    "label": "ABS"
+                },
+                {
+                    "value": "all-wheel-drive-system",
+                    "label": "All-Wheel Drive System"
+                },
+                {
+                    "value": "conditioner",
+                    "label": "Conditioner"
+                },
+                {
+                    "value": "esp",
+                    "label": "ESP"
+                },
+                {
+                    "value": "premium-materials",
+                    "label": "Premium Materials"
+                },
+                {
+                    "value": "turbo-engine",
+                    "label": "Turbo-engine"
+                }
+            ]
+        },
+        {
+            "tab_title_single": "Safety Features",
+            "tab_title_selected_labels": [
+                {
+                    "value": "active-air-suspension",
+                    "label": "Active Air Suspension"
+                },
+                {
+                    "value": "adaptive-suspension",
+                    "label": "Adaptive Suspension"
+                },
+                {
+                    "value": "advanced-driver-assistance-systems",
+                    "label": "Advanced Driver Assistance Systems"
+                },
+                {
+                    "value": "all-wheel-drive-system",
+                    "label": "All-Wheel Drive System"
+                },
+                {
+                    "value": "central-locking",
+                    "label": "Central locking"
+                },
+                {
+                    "value": "climate-control",
+                    "label": "Climate Control"
+                }
+            ]
+        },
+        {
+            "tab_title_single": "Exterior Feature",
+            "tab_title_selected_labels": [
+                {
+                    "value": "all-wheel-drive-system",
+                    "label": "All-Wheel Drive System"
+                },
+                {
+                    "value": "amg-performance-4matic",
+                    "label": "AMG Performance 4MATIC+"
+                },
+                {
+                    "value": "climate-control",
+                    "label": "Climate Control"
+                },
+                {
+                    "value": "conditioner",
+                    "label": "Conditioner"
+                },
+                {
+                    "value": "premium-materials",
+                    "label": "Premium Materials"
+                },
+                {
+                    "value": "turbo-engine",
+                    "label": "Turbo-engine"
+                }
+            ]
+        }
+    ]
+}

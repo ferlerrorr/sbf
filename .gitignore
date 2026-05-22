@@ -1,0 +1,33 @@
+# Sensitive env file — never commit real credentials
+.env
+.env.local
+.env.*.local
+
+# Local Compose overrides
+docker-compose.override.yml
+
+# Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Local Claude settings (machine-specific)
+.claude/settings.local.json
+
+# --- WordPress install ---
+# Ignore the entire WP tree by default; un-ignore custom code below.
+/wordpress/*
+!/wordpress/wp-content/
+
+# Inside wp-content: ignore everything, then keep the bits we author.
+/wordpress/wp-content/*
+!/wordpress/wp-content/themes/
+!/wordpress/wp-content/build-home.php
+
+# Inside themes: ignore parent theme + WP boilerplate index.php; keep the child theme.
+/wordpress/wp-content/themes/*
+!/wordpress/wp-content/themes/autovault-child/
+
+# ./dist/ at repo root is the deployable static export and IS committed (gh-pages).

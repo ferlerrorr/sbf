@@ -1,0 +1,23 @@
+{
+    "inventory_skin": "inventory-modern",
+    "default_sort_by": "date_high",
+    "sort_options": [
+        "mileage",
+        "price"
+    ],
+    "enable_search": false,
+    "enable_keywords_search": true,
+    "search_settings_ending": "",
+    "enable_features_search": false,
+    "enable_location": true,
+    "enable_distance_search": true,
+    "distance_measure_unit": "kilometers",
+    "distance_search": "5000",
+    "recommend_items_empty_result": true,
+    "recommend_distance_measure_unit": "miles",
+    "recommend_distance_search": "",
+    "listing_grid_choices": "9,12,18,27",
+    "saved_search_send_email": "1",
+    "saved_searches_amount": "5",
+    "saved_searches_desc": ""
+}

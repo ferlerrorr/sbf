@@ -1,0 +1,724 @@
+/* ============================================================
+   SFG Global Styles
+   Brand: SILSBEE(#888) FLEET(#0077CC) GROUP(#CC1A1A)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* overflow-x: hidden on html breaks position:sticky — use clip instead */
+html, body { overflow-x: clip !important; }
+
+/* Thin red scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CC1A1A; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #a31515; }
+* { scrollbar-width: thin; scrollbar-color: #CC1A1A transparent; }
+
+/* Base font */
+*, *::before, *::after {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+/* ── HEADER WRAPPER ────────────────────────────────────────── */
+
+#reactheme-header,
+#reactheme-header.rts-default-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.28) !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+  transition: background 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+#reactheme-header.sfg-header-scrolled,
+#reactheme-header.sfg-header-scrolled.rts-default-header {
+  background: #001528 !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.45) !important;
+  border-bottom-color: transparent !important;
+}
+
+/* ── SCROLL COLLAPSE: top bar slides up, logo slides down ───── */
+
+#reactheme-header.sfg-header-scrolled .sfg-topbar-row {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  pointer-events: none !important;
+}
+
+#reactheme-header.sfg-header-scrolled .sfg-header-divider {
+  max-height: 0 !important;
+  opacity: 0 !important;
+}
+
+#reactheme-header.sfg-header-scrolled .sfg-topbar-logo {
+  transform: none !important;
+  padding-top: 12px !important;
+}
+
+/* ── TRANSPARENT STATE — high-contrast text over hero ───────── */
+
+#reactheme-header:not(.sfg-header-scrolled) .sfg-item-label {
+  color: rgba(255,255,255,0.65) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .sfg-item-value {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .sfg-logo-silsbee {
+  color: rgba(255,255,255,0.6) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .sfg-topbar-tagline {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .sfg-social-label {
+  color: rgba(255,255,255,0.6) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .sfg-social-icon,
+#reactheme-header:not(.sfg-header-scrolled) .sfg-icon-badge {
+  color: rgba(255,255,255,0.85) !important;
+  background: rgba(0,0,0,0.35) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .navbar-menu ul#primary-menu-main > li > a {
+  color: rgba(255,255,255,0.85) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5) !important;
+}
+
+#reactheme-header:not(.sfg-header-scrolled) .navbar-menu ul#primary-menu-main > li > a:hover,
+#reactheme-header:not(.sfg-header-scrolled) .navbar-menu ul#primary-menu-main > li.current-menu-item > a {
+  color: #ffffff !important;
+}
+
+/* Offset fixed header on non-home pages so content isn't hidden beneath it */
+body:not(.home) {
+  padding-top: calc(var(--sfg-header-h, 72px) + 60px) !important;
+}
+
+/* ── OUTER WRAPPER: full-width, logo | right-col ───────────── */
+
+.sfg-header-inner {
+  width: 100% !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+/* ── LOGO (left column, full header height) ────────────────── */
+
+.sfg-topbar-logo {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 0 3em 12px 9em !important;
+  border-right: 1px solid rgba(255,255,255,0.28) !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+  gap: 4px !important;
+  transition: transform 0.35s ease !important;
+}
+
+.sfg-logo-silsbee {
+  font-family: "Inter", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 3px !important;
+  color: #7a95b0 !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+}
+
+.sfg-logo-fleet {
+  font-family: "Inter", sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  color: inherit !important;
+}
+
+.sfg-fleet-word {
+  color: #0077CC !important;
+  -webkit-text-fill-color: #0077CC !important;
+}
+
+.sfg-group-word {
+  color: #CC1A1A !important;
+  -webkit-text-fill-color: #CC1A1A !important;
+}
+
+/* ── RIGHT COLUMN: contact row + divider + nav row ─────────── */
+
+.sfg-header-right {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+}
+
+/* ── CONTACT ROW (top of right column) ─────────────────────── */
+
+.sfg-topbar-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0.5em 7.5em 0.5em 3.75em !important;
+  flex: 1 !important;
+  max-height: 72px;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.3s ease !important;
+}
+
+/* Contact items */
+.sfg-topbar-contact {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding-top: 0 !important;
+}
+
+.sfg-topbar-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: opacity 0.2s !important;
+}
+
+.sfg-topbar-item:hover { opacity: 0.8 !important; }
+
+.sfg-topbar-location { cursor: default !important; }
+
+/* Icon badge — solid rounded square */
+.sfg-icon-badge {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  background: rgba(15,40,70,0.10) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+  color: #4a6880 !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.sfg-topbar-item:hover .sfg-icon-badge { background: rgba(0,119,204,0.3) !important; color: #ffffff !important; }
+
+/* Two-line contact text */
+.sfg-item-text {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1 !important;
+  gap: 2px !important;
+}
+
+.sfg-item-label {
+  font-size: 9.5px !important;
+  font-weight: 500 !important;
+  color: #4a6880 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+}
+
+.sfg-item-value {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #c8d8e8 !important;
+}
+
+/* Right side: tagline + social — anchored to the same right edge as the nav button */
+.sfg-topbar-right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  flex-shrink: 0 !important;
+  padding-top: 0 !important;
+  margin-left: auto !important;
+  margin-right: -6.5em !important;
+  line-height: 1 !important;
+}
+
+.sfg-topbar-tagline {
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  color: #0077CC !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+}
+
+.sfg-social-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  line-height: 1 !important;
+}
+
+.sfg-social-label {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  color: #4a6880 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+.sfg-social-icons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.sfg-social-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  background: rgba(15,40,70,0.10) !important;
+  border-radius: 4px !important;
+  color: #4a6880 !important;
+  text-decoration: none !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.sfg-social-icon:hover {
+  background: rgba(0,119,204,0.3) !important;
+  color: #ffffff !important;
+}
+
+/* ── HORIZONTAL DIVIDER (full width of right column) ───────── */
+
+.sfg-header-divider {
+  height: 1px !important;
+  max-height: 1px;
+  background: rgba(255,255,255,0.28) !important;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease !important;
+}
+
+/* ── NAV ROW (bottom of right column) ──────────────────────── */
+
+.sfg-mainnav-row {
+  padding: 0 7.5em 0 3.75em !important;
+}
+
+#reactheme-header .rt-row-header {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 0 !important;
+}
+
+/* ── NAV LINKS ─────────────────────────────────────────────── */
+
+#reactheme-header .rt-menu-responsive.menu-area {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+#reactheme-header .navbar-menu {
+  flex: 1 !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main {
+  display: flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li {
+  padding: 0.75em 0.01em !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li > a {
+  display: block !important;
+  padding: 5px 15px !important;
+  color: #c8d8e8 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: color 0.2s !important;
+  letter-spacing: 0.2px !important;
+}
+
+/* First nav item has no left padding — aligns with logo */
+#reactheme-header .navbar-menu ul#primary-menu-main > li:first-child > a {
+  padding-left: 0 !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li > a:hover,
+#reactheme-header .navbar-menu ul#primary-menu-main > li.current-menu-item > a {
+  color: #ffffff !important;
+}
+
+/* Dropdown chevron */
+#reactheme-header .navbar-menu ul#primary-menu-main > li.menu-item-has-children > a::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-right: 2px solid currentColor !important;
+  border-bottom: 2px solid currentColor !important;
+  transform: rotate(45deg) !important;
+  margin-left: 6px !important;
+  vertical-align: middle !important;
+  margin-bottom: 3px !important;
+  opacity: 0.6 !important;
+  transition: transform 0.2s, opacity 0.2s !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li.menu-item-has-children:hover > a::after {
+  transform: rotate(-135deg) !important;
+  margin-bottom: -2px !important;
+  opacity: 1 !important;
+}
+
+/* ── DROPDOWN ──────────────────────────────────────────────── */
+
+#reactheme-header .navbar-menu .sub-menu {
+  background: #ffffff !important;
+  border-top: none !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+  min-width: 200px !important;
+  padding: 8px 0 !important;
+}
+
+#reactheme-header .navbar-menu .sub-menu li a {
+  padding: 10px 20px !important;
+  color: #003B71 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  display: block !important;
+  transition: background 0.15s, color 0.15s !important;
+}
+
+#reactheme-header .navbar-menu .sub-menu li a:hover {
+  background: #f0f4f8 !important;
+  color: #0077CC !important;
+}
+
+#reactheme-header .navbar-menu .sub-menu li:not(:last-child) {
+  border-bottom: 1px solid #e8edf2 !important;
+}
+
+/* ── REQUEST A QUOTE — red pill button, far right ───────────── */
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li.menu-item-6593 {
+  margin-left: auto !important;
+  padding: 0 !important;          /* remove li padding so the <a> controls all spacing */
+  display: flex !important;
+  align-items: center !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li.menu-item-6593 > a,
+#reactheme-header:not(.sfg-header-scrolled) .navbar-menu ul#primary-menu-main > li.menu-item-6593 > a,
+#reactheme-header.sfg-header-scrolled .navbar-menu ul#primary-menu-main > li.menu-item-6593 > a {
+  background: #CC1A1A !important;
+  color: #ffffff !important;
+  padding: 11px 26px !important;
+  border-radius: 3px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.3px !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: background 0.15s ease, transform 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+}
+
+#reactheme-header .navbar-menu ul#primary-menu-main > li.menu-item-6593 > a:hover,
+#reactheme-header:not(.sfg-header-scrolled) .navbar-menu ul#primary-menu-main > li.menu-item-6593 > a:hover,
+#reactheme-header.sfg-header-scrolled .navbar-menu ul#primary-menu-main > li.menu-item-6593 > a:hover {
+  background: #a31515 !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── HAMBURGER (mobile) ────────────────────────────────────── */
+
+#reactheme-header .menu-button svg rect {
+  fill: #ffffff !important;
+}
+
+#reactheme-header .menu-button {
+  padding: 8px !important;
+}
+
+/* ── MOBILE ────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .sfg-topbar-logo { padding: 0 3em 12px 9em !important; }
+  .sfg-topbar-row { padding-right: 7.5em !important; padding-left: 3.75em !important; }
+  .sfg-mainnav-row { padding-right: 7.5em !important; padding-left: 3.75em !important; }
+  .sfg-topbar-contact { gap: 20px !important; }
+}
+
+@media (max-width: 767px) {
+  #reactheme-header,
+  #reactheme-header.rts-default-header { width: 100% !important; left: 0 !important; right: 0 !important; }
+
+  /* Row 1: logo left | contact+socials right */
+  .sfg-header-inner { flex-direction: row !important; flex-wrap: wrap !important; align-items: stretch !important; width: 100% !important; }
+  .sfg-header-right { display: contents !important; }
+
+  .sfg-topbar-logo {
+    flex: 0 0 auto !important;
+    min-width: 110px !important;
+    padding: 10px 14px 10px 16px !important;
+    border-right: 1px solid rgba(255,255,255,0.28) !important;
+    border-bottom: none !important;
+    justify-content: center !important;
+  }
+  .sfg-logo-silsbee { font-size: 11px !important; color: #7a95b0 !important; }
+  .sfg-logo-fleet {
+    font-size: 16px !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    color: inherit !important;
+  }
+  .sfg-fleet-word { color: #0077CC !important; -webkit-text-fill-color: #0077CC !important; }
+  .sfg-group-word { color: #CC1A1A !important; -webkit-text-fill-color: #CC1A1A !important; }
+
+  .sfg-topbar-row {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 6px 10px !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    box-sizing: border-box !important;
+  }
+  /* Left: contact items stacked */
+  .sfg-topbar-contact { gap: 3px !important; flex-direction: column !important; align-items: flex-start !important; justify-content: center !important; flex: 1 !important; min-width: 0 !important; align-self: stretch !important; overflow: hidden !important; }
+  .sfg-topbar-item { gap: 0 !important; min-width: 0 !important; }
+  .sfg-icon-badge { display: none !important; }
+  .sfg-topbar-location { display: flex !important; margin-top: 4px !important; }
+  .sfg-item-text { min-width: 0 !important; }
+  .sfg-item-label { font-size: 8px !important; letter-spacing: 0.04em !important; }
+  .sfg-item-value { font-size: 11px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; max-width: 140px !important; }
+  /* Right: tagline + socials stacked */
+  .sfg-topbar-right { padding-top: 0 !important; align-items: flex-end !important; flex-shrink: 0 !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; align-self: stretch !important; gap: 0 !important; }
+  .sfg-topbar-tagline { display: block !important; font-size: 8px !important; text-align: right !important; color: #0077CC !important; font-weight: 600 !important; white-space: nowrap !important; }
+  .sfg-social-row { flex-direction: row !important; align-items: center !important; gap: 4px !important; }
+  .sfg-social-label { display: none !important; }
+  .sfg-social-icon { width: 22px !important; height: 22px !important; }
+  .sfg-header-divider { display: none !important; }
+
+  /* Row 2: nav full width */
+  .sfg-mainnav-row { flex: 0 0 100% !important; width: 100% !important; padding: 0 12px !important; box-sizing: border-box !important; border-top: 1px solid rgba(255,255,255,0.28) !important; }
+  #reactheme-header .navbar-menu ul#primary-menu-main > li { padding: 0.5em 0.01em !important; }
+  #reactheme-header .navbar-menu ul#primary-menu-main > li > a { padding: 4px 10px !important; font-size: 13px !important; }
+  .menu-wrap-off { max-width: 100% !important; width: 100% !important; padding: 24px 20px !important; }
+  .menu-ofcn.off-open { transform: translate3d(0, 0, 0) !important; }
+}
+
+/* ── PARALLAX sections ─────────────────────────────────────── */
+
+/*
+ * CSS parallax — background-attachment:fixed.
+ * Apply .sfg-parallax via Elementor CSS Classes field.
+ * Note: iOS Safari ignores fixed attachment on non-body elements,
+ * so Jarallax (sfg-parallax.js) handles mobile when data-sfg-parallax is set.
+ */
+.sfg-parallax,
+.sfg-parallax > .elementor-background-overlay {
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 1024px) {
+  /* Disable CSS fixed on tablet/mobile — Jarallax takes over */
+  .sfg-parallax { background-attachment: scroll !important; }
+}
+
+/* ── HERO HEIGHT ────────────────────────────────────────────── */
+
+.elementor-element-4141d1df {
+  min-height: 100vh !important;
+}
+
+.elementor-element-4141d1df .elementor-widget-wrap {
+  margin-top: calc(var(--sfg-header-h, 96px) + 100px) !important;
+}
+
+.elementor-element-540d5109 p {
+  color: rgba(255,255,255,0.9) !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5) !important;
+}
+
+/* ── HIDE BREADCRUMB on front page ─────────────────────────── */
+.home .reactheme-breadcrumbs { display: none !important; }
+
+/* ── OFF-CANVAS SIDEBAR NAV ─────────────────────────────────── */
+
+.menu-wrap-off .inner-offcan .nav-link-container {
+  top: 20px !important;
+}
+
+.menu-wrap-off { background: #ffffff !important; }
+
+/* All top-level items */
+.menu-area-addon-offcan .navbar ul > li > a {
+  color: #0a1f33 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+  padding: 12px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Current / active item */
+.menu-area-addon-offcan .navbar ul > li.current-menu-item > a,
+.menu-area-addon-offcan .navbar ul > li.current-menu-ancestor > a,
+.menu-area-addon-offcan .navbar ul > li.current_page_item > a {
+  color: #0077CC !important;
+}
+
+/* Hover */
+.menu-area-addon-offcan .navbar ul > li > a:hover { color: #0077CC !important; opacity: 1 !important; }
+
+/* Sub-menu items */
+.menu-area-addon-offcan .navbar ul li ul.sub-menu li a {
+  color: #2a4a66 !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  padding: 8px 0 8px 12px !important;
+  border-bottom: none !important;
+}
+.menu-area-addon-offcan .navbar ul li ul.sub-menu li a:hover { color: #0077CC !important; }
+
+/* Dropdown chevron — position right */
+.menu-area-addon-offcan .rtd-arrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-left: auto !important;
+  color: #0077CC !important;
+}
+.menu-area-addon-offcan .rtd-arrow svg { width: 18px !important; height: 18px !important; }
+
+/* ── HIDE unnecessary Autovault elements ───────────────────── */
+.header-top-area,
+.rts-header-two-area,
+.rts-header-three-area { display: none !important; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1, h2 {
+  font-weight: 700 !important;
+  color: #003B71;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+h3, h4 { font-weight: 600 !important; color: #003B71; }
+h5, h6 { font-weight: 600 !important; color: #888888; text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px !important; }
+
+h1 { font-size: 52px; }
+h2 { font-size: 38px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+
+body, p { font-size: 16px; line-height: 1.75; color: #1a1a1a; font-weight: 400; }
+small { font-size: 14px; line-height: 1.6; color: #6b7280; }
+
+@media (max-width: 1024px) {
+  h1 { font-size: 38px !important; }
+  h2 { font-size: 30px !important; }
+  h3 { font-size: 22px !important; }
+}
+@media (max-width: 767px) {
+  h1 { font-size: 28px !important; letter-spacing: -0.01em !important; }
+  h2 { font-size: 24px !important; }
+  h3 { font-size: 20px !important; }
+  body, p { font-size: 15px !important; }
+}
+
+/* ============================================================
+   ELEMENTOR COMPONENTS
+   ============================================================ */
+
+/* Buttons */
+.elementor-button {
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 4px !important;
+  padding: 13px 30px !important;
+  background: #0077CC !important;
+  color: #fff !important;
+  border: none !important;
+  transition: background 0.2s ease !important;
+}
+.elementor-button:hover { background: #005FA3 !important; }
+
+/* Section backgrounds — ensure they render */
+.elementor-section[data-settings*="background_color"] { }
+
+/* Icons */
+.elementor-icon i,
+.elementor-icon-box-icon .elementor-icon i { color: #0077CC !important; }
+
+/* Icon-box */
+.elementor-icon-box-title { font-weight: 600 !important; color: #003B71 !important; font-size: 17px !important; margin-bottom: 8px; }
+.elementor-icon-box-description { font-size: 15px !important; color: #4a5568 !important; line-height: 1.65 !important; }
+
+/* Counter */
+.elementor-counter-number-wrapper { font-weight: 700 !important; }
+.elementor-counter-title { font-size: 12px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.06em !important; opacity: 0.9; }
+
+/* Icon-list */
+.elementor-icon-list-text { font-size: 15px !important; color: #1a1a1a !important; }
+.elementor-icon-list-icon i { color: #0077CC !important; }
+
+/* Links */
+a { color: #0077CC; }
+a:hover { color: #CC1A1A; }
+a[href^="tel"] { white-space: nowrap; color: inherit; }
+@media (max-width: 767px) {
+  a[href^="tel"] { display: inline-block; padding: 4px 0; }
+  .elementor-button { padding: 12px 24px !important; font-size: 14px !important; }
+}

@@ -1,0 +1,32 @@
+/* SFG Contract Bar — sitewide trust strip
+   De-scoped from .sfg-page so it can render on any page (header, footer, P09 content).
+   On homepage, identical rules already in sfg-home.css under .sfg-page — that stays for
+   the home-only instance below the hero. */
+
+:root{
+  --sfg-cbar-white:#FFFFFF;
+  --sfg-cbar-ink:#111827;
+  --sfg-cbar-ink-4:#9CA3AF;
+  --sfg-cbar-border:#D1D5DB;
+  --sfg-cbar-bg:#F0F2F5;
+}
+
+.cbar{background:var(--sfg-cbar-white);border-bottom:1px solid var(--sfg-cbar-border);display:flex;align-items:stretch;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.cbar-label{background:var(--sfg-cbar-ink);display:flex;align-items:center;gap:8px;padding:0 24px;flex-shrink:0}
+.cbar-label svg{width:13px;height:13px;color:rgba(255,255,255,.6)}
+.cbar-label span{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap}
+.cbar-items{display:flex;flex:1}
+.cbar-item{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:10px 16px;border-right:1px solid var(--sfg-cbar-border);transition:background .12s;text-decoration:none}
+.cbar-item:last-child{border-right:none}
+.cbar-item:hover{background:var(--sfg-cbar-bg)}
+.ci-logo{max-height:28px;max-width:120px;width:auto;height:auto;object-fit:contain;display:block}
+.ci-name{font-size:13.5px;font-weight:600;color:var(--sfg-cbar-ink);text-align:center}
+.ci-note{font-size:11px;color:var(--sfg-cbar-ink-4);text-align:center}
+
+@media (max-width:768px){
+  .cbar{flex-direction:column}
+  .cbar-label{padding:10px 16px;justify-content:center}
+  .cbar-items{flex-wrap:wrap}
+  .cbar-item{flex:1 1 50%;border-right:1px solid var(--sfg-cbar-border);border-bottom:1px solid var(--sfg-cbar-border)}
+  .cbar-item:nth-child(even){border-right:none}
+}

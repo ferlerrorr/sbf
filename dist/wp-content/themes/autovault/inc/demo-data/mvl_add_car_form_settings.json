@@ -1,0 +1,92 @@
+{
+    "addl_group_ds_title": "",
+    "addl_title": "Build Your Listing",
+    "addl_description": "<p><span style=\"background-color: rgb(246, 249, 252);\">Discover our wide range of quality vehicles \u2014 from brand-new models to reliable used cars \u2014 all in one place. Each listing includes detailed specifications, features, pricing, and availability so you can compare and choose with confidence.<\/span><\/p>",
+    "addl_show_slots": true,
+    "addl_slots_title": "Slots available",
+    "addl_group_lt_title": "",
+    "addl_car_title": false,
+    "addl_group_details_title": "",
+    "addl_required_fields": [
+        "make",
+        "body",
+        "ca-year",
+        "price",
+        "mileage",
+        "serie",
+        "transmission"
+    ],
+    "allow_car_info_auto_complete": false,
+    "allow_dealer_add_new_category": true,
+    "addl_number_as_input": true,
+    "addl_show_registered": true,
+    "addl_show_vin": true,
+    "addl_show_history": true,
+    "addl_history_report": "Carfax, AutoCheck",
+    "addl_details_location": true,
+    "addl_group_features_setting_title": "",
+    "addl_required_featured": true,
+    "addl_group_gallery_title": "",
+    "addl_gallery_content": "",
+    "addl_required_image": true,
+    "addl_group_video_title": "",
+    "addl_video_content": "",
+    "addl_video_required": "",
+    "addl_group_seller_note_title": "",
+    "addl_seller_note_content": "<p>Discover our wide range of quality vehicles \u2014 from brand-new models to reliable used cars \u2014 all in one place. Each listing includes detailed specifications, features, pricing, and availability so you can compare and choose with confidence.<\/p>",
+    "addl_seller_note_required": "",
+    "addl_group_price_title": "",
+    "addl_price_title": "",
+    "addl_price_label": "",
+    "addl_sale_price": true,
+    "addl_sale_price_label": "",
+    "addl_custom_label": true,
+    "addl_price_desc": "",
+    "addl_group_reg_login_title": "",
+    "addl_reg_log_title": "",
+    "addl_reg_log_desc": "",
+    "addl_reg_log_link": "6062",
+    "sorted_steps": [
+        {
+            "id": "enable_layouts",
+            "name": "Enable",
+            "options": [
+                {
+                    "id": "item_details",
+                    "label": "Details",
+                    "icon": "fa fa-exclamation-triangle"
+                },
+                {
+                    "id": "item_features",
+                    "label": "Features"
+                },
+                {
+                    "id": "item_gallery",
+                    "label": "Gallery"
+                },
+                {
+                    "id": "item_videos",
+                    "label": "Videos"
+                },
+                {
+                    "id": "item_seller_note",
+                    "label": "Seller Note"
+                },
+                {
+                    "id": "item_price",
+                    "label": "Price",
+                    "icon": "fa fa-exclamation-triangle"
+                },
+                {
+                    "id": "item_plans",
+                    "label": "Plans"
+                }
+            ]
+        },
+        {
+            "id": "disable_layouts",
+            "name": "Disable",
+            "options": []
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+services:
+
+  db:
+    image: mysql:8.4
+    container_name: sbf_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE:      ${MYSQL_DATABASE}
+      MYSQL_USER:          ${MYSQL_USER}
+      MYSQL_PASSWORD:      ${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost",
+             "-u", "root", "--password=${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  wordpress:
+    image: wordpress:latest
+    container_name: sbf_wordpress
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST:      ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME:      ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER:      ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD:  ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: ${WORDPRESS_TABLE_PREFIX}
+    volumes:
+      - ./wordpress:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/wp-login.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: sbf_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PMA_HOST:     ${PMA_HOST}
+      PMA_PORT:     ${PMA_PORT}
+      PMA_USER:     ${PMA_USER}
+      PMA_PASSWORD: ${PMA_PASSWORD}
+    ports:
+      - "8081:80"
+    networks:
+      - internal
+
+volumes:
+  db_data:
+    name: sbf_db_data
+
+networks:
+  internal:
+    name: sbf_internal
+    driver: bridge
