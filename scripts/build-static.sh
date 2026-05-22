@@ -42,12 +42,12 @@ docker compose exec -T --user www-data wordpress wp eval \
   'update_option("simply-static", array_merge((array) get_option("simply-static", array()), array("origin_url" => "http://localhost")));' >/dev/null
 
 echo ">> Clearing previous export dir and URL queue"
-docker compose exec -T wordpress bash -c "rm -rf ${WP_EXPORT_DIR_CONTAINER}/* ${WP_EXPORT_DIR_CONTAINER}/.[!.]* 2>/dev/null || true"
+docker compose exec -T wordpress bash -c "rm -rf ${WP_EXPORT_DIR_CONTAINER} && mkdir -p ${WP_EXPORT_DIR_CONTAINER} && chown www-data:www-data ${WP_EXPORT_DIR_CONTAINER}"
 docker compose exec -T --user www-data wordpress wp db query "TRUNCATE wp_simply_static_pages;" >/dev/null
 
 echo ">> Copying driver script into container"
 docker compose cp ./scripts/static-export.php wordpress:/tmp/static-export.php
-docker compose exec -T wordpress chown www-data:www-data /tmp/static-export.php
+docker compose exec -T wordpress chown www-data:www-data //tmp/static-export.php
 
 echo ">> Running Simply Static (synchronous)"
 docker compose exec -T --user www-data wordpress wp eval-file "$TMP_SCRIPT_CONTAINER"
