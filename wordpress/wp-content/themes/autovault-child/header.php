@@ -98,8 +98,6 @@
             </div><!-- .sfg-header-inner -->
         </header>
 
-        <?php if ( ! is_front_page() ) { get_template_part( 'inc/breadcrumbs' ); } ?>
-
         <?php if ( get_page_template_slug() !== 'elementor_header_footer' && ! is_front_page() ) : ?>
         <div class="main-contain">
             <div class="container">
