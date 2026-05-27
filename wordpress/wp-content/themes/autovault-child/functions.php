@@ -73,20 +73,13 @@ function sfg_render_cbar() {
 }
 
 // Sitewide above-footer: get_footer fires when footer.php is loaded.
-// front-page.php intentionally skips get_footer(), so home is unaffected.
+// Homepage already renders its own cbar inline.
 function sfg_cbar_before_footer() {
+    if ( is_front_page() ) { return; }
     echo sfg_render_cbar();
 }
 add_action( 'get_footer', 'sfg_cbar_before_footer' );
 
-// P09 (Contracts page) top-of-content: prepend cbar to page content.
-function sfg_cbar_prepend_p09( $content ) {
-    if ( is_singular() && in_the_loop() && is_main_query() && get_the_ID() === 14 ) {
-        return sfg_render_cbar() . $content;
-    }
-    return $content;
-}
-add_filter( 'the_content', 'sfg_cbar_prepend_p09' );
 
 // Header transparent → solid on scroll
 function sfg_enqueue_header_scroll() {
@@ -108,7 +101,7 @@ function sfg_enqueue_homepage_assets() {
     }
     wp_enqueue_style(
         'sfg-inter',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
+        'https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap',
         [],
         null
     );
