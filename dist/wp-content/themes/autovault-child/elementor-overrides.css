@@ -588,8 +588,8 @@ body:not(.home) {
   text-shadow: 0 1px 6px rgba(0,0,0,0.5) !important;
 }
 
-/* ── HIDE BREADCRUMB on front page ─────────────────────────── */
-.home .reactheme-breadcrumbs { display: none !important; }
+/* ── HIDE BREADCRUMB on all Elementor full-width pages ────── */
+.reactheme-breadcrumbs { display: none !important; }
 
 /* ── OFF-CANVAS SIDEBAR NAV ─────────────────────────────────── */
 
