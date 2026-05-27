@@ -594,6 +594,16 @@ html, body { overflow-x: clip !important; }
 /* ── HIDE BREADCRUMB on all Elementor full-width pages ────── */
 .reactheme-breadcrumbs { display: none !important; }
 
+/* ── INNER PAGE CONTENT WIDTH ──────────────────────────────── */
+/* Cap full-width sections on inner pages so content doesn't stretch
+   edge-to-edge. First section (hero) stays full-bleed. */
+body:not(.home) .elementor-section-full_width:not(:first-child) > .elementor-container {
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  gap: 60px !important;
+}
+
 /* ── OFF-CANVAS SIDEBAR NAV ─────────────────────────────────── */
 
 .menu-wrap-off .inner-offcan .nav-link-container {
